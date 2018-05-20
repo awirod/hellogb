@@ -1,5 +1,12 @@
-hello.gb: hello.c
-	lcc -o hello.gb hello.c
+SRC = tile.c map.c hello.c
+OBJ = $(SRC:%.c=%.o)
+IMAGE = hello.gb
+
+.c.o:
+	lcc -c $<
+
+$(IMAGE): $(OBJ)
+	lcc -o $@ $(OBJ)
 
 clean:
-	rm -v *.gb
+	@rm -fv $(IMAGE) $(OBJ)
