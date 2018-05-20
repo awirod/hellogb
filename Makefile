@@ -1,4 +1,4 @@
-SRC = tile.c map.c hello.c
+SRC = tile.c map.c sprite.c hello.c
 OBJ = $(SRC:%.c=%.o)
 IMAGE = hello.gb
 
